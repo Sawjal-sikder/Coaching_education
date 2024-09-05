@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="{% static 'asset/css/bootstrap.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'asset/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'asset/css/animate.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'asset/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;
+subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:400,400i" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Header part -->
+   {% include 'header.html' %}
+   <!-- Header part -->
+
+    {% block contain %} {% endblock %}
+
+    {% include 'footer.html' %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'asset/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'asset/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'asset/js/isotape.function.js' %}"></script>
+    <script src="{% static 'asset/js/main.js' %}"></script>
+    <script>
+    $(document).ready(function(){
+
+
+    })
+
+
+    </script>
+</body>
+
+</html>
