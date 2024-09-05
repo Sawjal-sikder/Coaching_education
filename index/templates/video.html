@@ -1,13 +1,16 @@
  {% load static %}
+ {% load embed_video_tags %}
     <section id="video-part">
         <h2>Concept Videos</h2>
     <div class="container">
         <div class="row">
         <div class="col-md-8">
             <div class="video-009p">
-                <figure>
-         <iframe width="754" height="480" src="https://www.youtube.com/embed/6dQXtSfN54k" frameborder="0" allowfullscreen></iframe>
-                </figure>
+                {% for item in videos %}
+                {% video item.url '754x480' %}
+                {{ item.title }}
+                {% endfor  %}
+
 
             </div>
 
