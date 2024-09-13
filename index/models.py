@@ -31,10 +31,6 @@ class Module(models.Model):
     def __str__(self):
         return self.name
 
-
-
-
-#
 class videos(models.Model):
    title = models.CharField(max_length=100)
    addDate = models.DateTimeField(auto_now_add=True)
@@ -46,3 +42,26 @@ class videos(models.Model):
 
    class Meta:
        ordering = ['-addDate']
+
+class faq(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    is_active = models.BooleanField(default=True)
+    def __str__(self):
+        return self.title
+class faq_details(models.Model):
+    faq_title = models.ForeignKey(faq, on_delete=models.CASCADE)
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+    is_active = models.BooleanField(default=True)
+    def __str__(self):
+        return self.question
+
+
+class studentRegistration(models.Model):
+    first_name = models.CharField(max_length=55)
+    last_name = models.CharField(max_length=55)
+    email = models.EmailField()
+    mobile_number = models.CharField(max_length=11, unique=True)
+    def __str__(self):
+        return self.last_name

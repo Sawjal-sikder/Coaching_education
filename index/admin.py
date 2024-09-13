@@ -24,4 +24,16 @@ class ModuleAdmin(admin.ModelAdmin):
 class videosAdmin(admin.ModelAdmin):
     list_display = ['title', ]
 
+@admin.register(faq)
+class faqAdmin(admin.ModelAdmin):
+    list_display = ['title','slug',]
+    prepopulated_fields = {'slug':('title',)}
+
+@admin.register(faq_details)
+class faq_detailsAdmin(admin.ModelAdmin):
+    list_display = ['faq_title','question','answer']
+@admin.register(studentRegistration)
+class studentRegistrationAdmin(admin.ModelAdmin):
+    list_display = ['first_name','last_name','email','mobile_number']
+
 

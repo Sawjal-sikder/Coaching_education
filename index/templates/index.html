@@ -14,33 +14,24 @@
 <!--    Admission ads-->
 
 
-    <section id="admission-ads">
+<section id="admission-ads">
     <div class="container">
+        {% for faq in faqs %}
         <div class="row">
-        <div class="col-md-6">
-            <div class="admission0006">
-             <h3>Admissions Open For Academic Year 2017-18.<br>
-Enrol Now & Get Early Enrolment Benefits</h3>
-
-            </div>
-
-
+            <div class="col-md-6">
+                <div class="admission0006">
+                <h3>{{faq.title}}</h3>
+                </div>
             </div>
             <div class="col-md-6">
-                      <div class="askqes003">
-   <a href="#"><button type="button" class="ques008-button">ASK QUES</button></a>
-
+                <div class="askqes003">
+                    <a href="{% url 'faq_details' faq.slug %}" class="ques008-button">ASK QUES</a>
+                </div>
             </div>
-            </div>
-
-
         </div>
-
-
-        </div>
-
-
-    </section>
+        {% endfor %}
+    </div>
+</section>
 
 <!--    latest news part-->
 
