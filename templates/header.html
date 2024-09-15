@@ -26,9 +26,9 @@
                         <li><a href="our_team.html">Our Team</a></li>
                           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course <span class="caret"></span></a>
                             <ul class="dropdown-menu  animated bounceInLeft">
-                                <li><a href="course_secoundary.html">Secondary</a></li>
-                                <li><a href="higher_secoundary.html">Higher Secondary</a></li>
-                                <li><a href="othercourse.html"> Other</a></li>
+                                {% for course in coursesDrop %}
+                                <li><a href="{% url 'courseurl' course.slug %}">{{ course.title }}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
                         <li><a href="{% url 'gallery' %}">Gallery</a></li>

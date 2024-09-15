@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{courseDetail.title | title }}{% endblock %}
+{% block contain %}
+
+<section id="title0045">
+        <div class="container">
+            <div class="entry-title005-left">
+                <h2> {{courseDetail.title | title }}</h2> </div>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">Secondary School</a></li>
+            </ol>
+        </div>
+    </section>
+    <section id="Coursepart0057">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="detailscor0048">
+                        {% if classSubjects.is_active %}
+                    <h1>{{ classSubjects.name }}</h1>
+                        <p>{{ classSubjects.description }}</p>
+                        <br>
+                        {% else %}
+                        <p>No Class data</p>
+                        {% endif %}
+<!--  point one-->
+                        {% for x in ModuleSubjects %}
+                            <h5><strong>{{ x.name }}</strong></h5>
+                            <p>{{ x.description }}</p>
+                            <br>
+                        {% endfor %}
+
+                        <div class="coursr-stracture9753">
+                            <p>Download your Course Outline</p>
+        <!--  button one-->
+                            <figure>
+                            <a href="pdf/Capture.PNG" download><button type="button" class="course473-button">Class XI</button></a>
+                            </figure>
+                            <!--  button two-->
+                             <figure>
+                            <a href="pdf/Capture.PNG" download><button type="button" class="course473-button">Class XII</button></a>
+                            </figure>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                <div class="registration-form5y785">
+                    <figure>
+                    <a href="{% url 'registration' %}" class="reg-button6547">Registration Form</a>
+                        <p>Book your Free Demo</p>
+
+                    </figure>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/isotape.function.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.reg-button6547').click(function(){
+                $('.full-form0056').toggle();
+            });
+
+
+        });
+    </script>
+
+{% endblock %}

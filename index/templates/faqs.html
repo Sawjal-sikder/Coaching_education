@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titile %}Coching center faqs{% endblock %}
+{% block title %} Faqs{% endblock %}
 {% block contain %}
 
 
@@ -45,28 +45,8 @@
                 <div class="col-md-4">
                 <div class="registration-form5y785">
                     <figure>
-                    <button type="button" class="reg-button6547">Registration Form</button>
+                    <a href="{% url 'registration' %}" class="reg-button6547">Registration Form</a>
                         <p>Book your Free Demo</p>
-                    <div class="full-form0056 animated fadeInRight">
-                      <form method="POST">
-                          {% csrf_token %}
-                          <div class="name_form84775">
-                        <input type="text" class="name98" placeholder="First Name" name="first_name">
-                          </div>
-                          <div class="last-nmae00887">
-                        <input type="text" class="lname178" placeholder="Last Name" name="last_name">
-                          </div>
-                           <div class="email_form84875">
-                        <input type="email" class="email198" placeholder="Enter your Email" name="email">
-                          </div>
-                           <div class="mobile4878">
-                        <input type="text" class="mobilenum73" placeholder="Mobile Number" name="mobile_number">
-                          </div>
-
-                          <button type="submit" class="submit-button6547">Submit</button>
-                        </form>
-
-                        </div>
 
                     </figure>
 

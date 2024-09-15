@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Registration{% endblock %}
+{% block contain %}
+
+<section id="title0045">
+        <div class="container">
+            <div class="entry-title005-left">
+                <h2> Registration Form</h2> </div>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">registration</a></li>
+            </ol>
+        </div>
+    </section>
+    <section id="Coursepart0057">
+        <div class="container">
+            <div class="row">
+
+                <form method="POST" style="width: 100%; max-width: 600px; margin: 0 auto;">
+                    {% csrf_token %}
+                    {{ form.as_p }}  <!-- Render the form fields with paragraph tags -->
+                            <div style="text-align: right; margin-top: 20px;">
+                                <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer;">
+                                    Submit
+                                </button>
+                            </div>
+                </form>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/isotape.function.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.reg-button6547').click(function(){
+                $('.full-form0056').toggle();
+            });
+
+
+        });
+    </script>
+
+{% endblock %}
