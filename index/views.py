@@ -44,24 +44,27 @@ def registration(request):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         mobile_number = request.POST.get('mobile_number')
-
+        print(first_name)
         # Check if required fields are provided
         if not first_name or not last_name or not email:
-            # Handle the case where required fields are missing
             return render(request, 'faqs.html', {'error': 'Please fill out all required fields.'})
 
-        # Create and save a new studentRegistration instance
-        reg = studentRegistration(
+        # Check if email is already registered
+        if studentRegistration.objects.filter(email=email).exists():
+            return render(request, 'faqs.html', {'error': 'Email is already registered.'})
+
+        # Create and save the new studentRegistration instance
+        reg = studentRegistration.objects.create(
             first_name=first_name,
             last_name=last_name,
             email=email,
             mobile_number=mobile_number
         )
         reg.save()
+        return redirect('index')
 
-        return redirect('success_url')  # Redirect to a success page or another view
 
-    return render(request, 'faqs.html')
+
 
 
 class AboutCreateView(CreateView):

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titile %}Contact Us{% endblock %}
+{% block contain %}
+
+<body>
+    <section id="title0045">
+        <div class="container">
+            <div class="entry-title005-left">
+                <h2>Contact Us</h2> </div>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ol>
+        </div>
+    </section>
+    <section>
+        {% if messages %}
+    <div>
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+    </section>
+ <section id="contact_us832">
+    <div class="container">
+        {% for profile in profiles %}
+        <div class="contactmap8934">
+     <figure>
+        <iframe src="{{profile.map_link}}" width="1150" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+        </figure>
+        </div>
+
+        <div class="row">
+        <div class="col-md-4">
+            <div class="cA1-378left">
+            <h1>Location</h1>
+                <p>{{profile.title}}</p>
+                <p>{{profile.address}}</p>
+                <p>E-mail : {{profile.email}}</p>
+
+
+            </div>
+
+
+            </div>
+
+            <div class="col-md-3">
+            <div class="cA1-middle9849">
+            <h1>Social  Site</h1>
+                {% if profile.facebook %}
+                <a href="{{profile.facebook}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if profile.twitter %}
+                <a href="{{profile.twitter}}"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if profile.linkedin %}
+                <a href="{{profile.linkedin}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                {% endif %}
+                {% if profile.google %}
+                <a href="{{profile.google}}"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                {% endif %}
+
+
+            </div>
+            </div>
+            {% endfor %}
+                <div class="col-md-5">
+            <div class="cA2-right4587">
+            <h1>Feedback</h1>
+               <form action="{% url 'feetBack'%}" method="POST">
+                   {% csrf_token %}
+                    <div class="name985">
+                   <input type="text" class="namepar365" placeholder="Name" name="name">
+                   </div>
+                    <div class="email83">
+                   <input type="text" class="emailpar365" placeholder="Email" name="email">
+                   </div>
+                    <div class="Comm932">
+                   <input type="text" class="commentpar843" placeholder="Comment" name="comment">
+                   </div>
+                   <div >
+                       <button type="submit" class="submit-button6547"> FeetBack </button>
+                   </div>
+                </form>
+            </div>
+            </div>
+        </div>
+     </div>
+ </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/isotape.function.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.reg-button6547').click(function(){
+                $('.full-form0056').toggle();
+            });
+
+
+        });
+    </script>
+</body>
+
+{% endblock %}

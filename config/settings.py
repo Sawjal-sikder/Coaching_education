@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'embed_video',
     'accounts',
     'index',
+    'contactUs',
 ]
 
 MIDDLEWARE = [
