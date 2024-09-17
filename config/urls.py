@@ -9,6 +9,8 @@ urlpatterns = [
     path('contact_us/', include('contactUs.urls')),
     path('gallery/', include('gallery.urls')),
     path('course/', include('course.urls')),
+    path('team/', include('team.urls')),
+    path('about/', include('about.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

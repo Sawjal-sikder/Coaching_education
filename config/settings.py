@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'contactUs',
     'gallery',
     'course',
+    'team',
+    'about',
 ]
 
 MIDDLEWARE = [
