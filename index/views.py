@@ -3,6 +3,7 @@ from .models import *
 from django.views.generic import CreateView, UpdateView, DetailView
 from .forms import *
 from django.urls import reverse_lazy
+from contactUs.models import *
 
 
 # Create your views here.
@@ -18,6 +19,8 @@ def indexView(request):
     single_video = videos.objects.filter(is_active=True)[:1]
     all_videos = videos.objects.filter(is_active=True)
     single_faq = faq.objects.filter(is_active=True)
+    # map Section
+    profiles = companyProfile.objects.filter(is_active=True)
     return render(request, 'index.html', {
         'blogs': blogs,
         'aboutfirstcoll': aboutfirstcoll,
@@ -26,6 +29,7 @@ def indexView(request):
         'videos': single_video,
         'all_videos': all_videos,
         'faqs': single_faq,
+        'profiles': profiles,
     })
 
 class faq_details(DetailView):

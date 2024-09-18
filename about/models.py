@@ -32,7 +32,7 @@ class OurValues(models.Model):
 
 # Model for additional details about the coaching center
 class OurValuesDetails(models.Model):
-    OValues = models.ForeignKey(AboutCoachingCenter, on_delete=models.CASCADE)
+    OValues = models.ForeignKey(OurValues, on_delete=models.CASCADE, related_name='details')
     title = models.CharField(max_length=255)
     description = models.TextField()
 

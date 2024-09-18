@@ -24,9 +24,10 @@
                             <p>{{ x.description }}</p>
                         </div>
                         <div class="valuedeatils356-info">
-                            {% for i in x.OurValuesDetails_set.all %}
-                            <h3>{{ i.title }}</h3>
-                            <p>{{ i.description }}</p>
+                            <!-- Loop through related AboutCoachingDetails objects -->
+                            {% for detail in x.details.all %}
+                            <h3>{{ detail.title }}</h3>
+                            <p>{{ detail.description }}</p> <!-- Display the description dynamically -->
                             {% endfor %}
                         </div>
                     </div>
@@ -37,30 +38,9 @@
             <div class="col-md-4">
                 <div class="registration-form5y785">
                     <figure>
-                        <button type="button" class="reg-button6547">Registration Form</button>
+                        <a href="{% url 'registration' %}" class="reg-button6547">Registration Form</a>
                         <p>Book your Free Demo</p>
-                        <div class="full-form0056 animated fadeInRight">
-                            <form>
-                                <div class="name_form84775">
-                                    <input type="text" class="name98" placeholder="First Name">
-                                </div>
-                                <div class="last-nmae00887">
-                                    <input type="text" class="lname178" placeholder="Last Name">
-                                </div>
-                                <div class="email_form84875">
-                                    <input type="text" class="email198" placeholder="Enter your Email">
-                                </div>
-                                <div class="mobile4878">
-                                    <input type="text" class="mobilenum73" placeholder="Mobile Number">
-                                </div>
-
-                                <button type="button" class="submit-button6547">Submit</button>
-                            </form>
-
-                        </div>
-
                     </figure>
-
                 </div>
 
             </div>
